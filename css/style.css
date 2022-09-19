@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+html{
+	margin: 2%; /*marginal på rotelement*/
+}
+body {
+	margin: auto;		/*Centrera sidan*/
+	max-width: 860px;     /*max bredd på body,ser bättre ut */
+	font-size: 100%; /*startvärde*/
+	font-family: sans-serif;  /*text stil*/
+	background-color: rgba(32, 68, 15, 0.37);
+}
+header {
+	text-align: center; /*Centrera texten i mitten */
+
+}
+form { 
+	margin-left: 25%;   /*flyttar form till mitten*/
+	}
+
+
+/*
+====================================================
+Regler startsida
+====================================================
+*/
+.startpage{         /*startsidan flex layout*/
+	display: flex;	
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+}
+.startpage header, /*tar upp 100% växer inte mer och blir inte mindre*/
+.startpage footer{
+	flex: 0 0 100%;
+}
+
+.startpage section { /*sectioner tar 22%*/
+	flex: 0 0 22%;
+}
+
+.logoo   /* bildens storlek i mitten "warzone"*/
+ {
+	 width: 400px;
+	 height: 150px;
+ 
+  }
+ 
+ 
+
+.tagline {   /*stylear "help you win every ginfight"*/
+    font-size: 120%;
+    padding: 0.5em;   /* Avstånd till kantlinje */
+    border-top: 3px double #00AF64;
+    border-bottom: 3px double #00AF64; 
+   }
+
+/*
+====================================================
+Regler för undersidor
+====================================================
+*/
+ 
+ h1 {
+	font-family: 'Merienda One', cursive; /*typsnitt hämtat från google*/
+    font-size: 500%;           /* Massiv rubrik */
+   }
+
+ h1::first-letter {    /*byter färg på första bokstaven i rubrik*/
+	color:#00af0f;
+ }
+
+  .flex{
+	display: flex;    /* för subpage*/
+}
+
+/*
+====================================================
+Regler för meny
+====================================================
+*/
+
+.menu  h2 {
+font-family: 'Merienda One', cursive; /*typsnitt hämtat från google*/
+margin: 0 0 1em;
+padding: 2em 0;
+background-color: #c2dbc4;  /* mycket ljusgrå */
+text-align: center;
+box-shadow: inset 0 0 20px #08f027; /*Rundningen, effekten med en inre box-shadow*/
+border-radius:100%;             
+}
+
+.menu a:link,
+.menu a:visited{
+
+	text-decoration: none; /*tar bort understrykning*/
+	color:#000;            
+}
+.menu a:focus,
+.menu a:hover{
+
+	text-decoration: underline; /*understräck och rödfärg när musen är över länk*/
+	color: #A62F00;
+}
+.menu a:active {                /*i klickögonblicket blir det klarare röd färg*/
+	text-decoration: underline;
+	color:#FF4900;
+}
+
+/*
+====================================================
+Regler för footer
+====================================================
+*/
+
+footer {				/*texten i botten*/
+	margin-top: 3em;
+	text-align:center;  
+	color:#999;
+}
+
+/*
+====================================================
+Subpage
+====================================================
+*/
+/*=======================*/
+/*layout sektioner*/ 
+/*=======================*/
+
+.subpage .logo {
+	width: 250px;  /* logo storlek*/
+	height:150px;
+}
+.subpage h1{
+	font-size: 2.6rem; /*rubrik storlek*/
+}
+h1 > span{
+	color: #0b7214; /* "om oss" färg*/
+}
+
+.subpage .hwrap {
+	justify-content: space-between; /*puttar logo och rubrik ifrån varandrea*/
+}
+
+
+.subpage .hwrap > a,
+.subpage .hwrap > h1 {
+	flex: 0 1 20%;   
+	min-width: 300px;
+	margin-right: 10px;		
+}
+.subpage .hwrap > h1,
+div[role=main] {
+	flex: 1 1 300px;
+	
+	
+}
+.subpage .hwrap > a,
+nav {
+	flex: 0 1 20%;  /*flex-grow,flex-shrink och flex-basis*/
+	min-width: 146px; /* hur mycket dessa flex items får krympa*/
+	margin-right: 10px;	/*flex items  till höger inte ska komma ända inpå*/
+	}
+
+/*=======================*/
+/*Meny*/
+/*=======================*/
+
+.menu{   
+	margin: 1em 0;
+	padding: 0;
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	list-style:none;
+}
+.menu > h2 {
+	margin: 0 0 1rem;
+	width:100%;
+
+}
+
+
+
+
+/*=======================================================*/
+/*regler för subpage main div*/ /*återanvändbara konponenter*/   
+/*========================================================*/
+
+
+article{                 
+	padding-bottom:1em;  /* sista p elementet medverkar 1em*/
+	margin-bottom: 2em;
+	border-bottom: 3px double #00af64; /*gröna understräcket mellan alla personer*/
+
+}
+
+article p{
+	margin-left:140px; /* hur långt till höger "p" börjar*/
+	
+
+}
+figure {
+	float: left; /*bilden till vänster om texten*/
+	margin: 0; /*nolställ webbläsarens inbyggda stil*/
+}
+figure img{
+	width:128px;  /*storlek på bilderna*/
+	height:128px;
+}
+figcaption {                     /* stil/storlek på namnen under bilderna*/
+	font: italic bolder 110% sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	color: #666;
+}
+
+/*=======================*/
+/*återanvändbara komponenter*/
+/*=======================*/
+
+.dborder {                  /*storlek på kantlinjer runt namn*/
+	border: 1px solid #ccc;   
+	padding: 5px;            
+}
