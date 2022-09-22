@@ -1,21 +1,18 @@
 @charset "UTF-8";
 
-html{
-	margin: 2%; /*marginal på rotelement*/
-}
+
 body {
-	margin: auto;		/*Centrera sidan*/
-	max-width: 860px;     /*max bredd på body,ser bättre ut */
-	font-size: 100%; /*startvärde*/
+	margin: auto;		/*Centrera sidan till mitten*/
+	max-width: 1000px;     /*max bredd på body,ser bättre ut */
 	font-family: sans-serif;  /*text stil*/
 	background-color: rgba(32, 68, 15, 0.37);
 }
 header {
-	text-align: center; /*Centrera texten i mitten */
+	text-align: center; /*Centrera texten i mitten */ 
 
 }
 form { 
-	margin-left: 25%;   /*flyttar form till mitten*/
+	margin:auto;   /*centrerar form till mitten av hemsidan*/
 	}
 
 
@@ -25,18 +22,18 @@ Regler startsida
 ====================================================
 */
 .startpage{         /*startsidan flex layout*/
-	display: flex;	
+	display: flex;	/* gör hela body till flexbox*/
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 }
 .startpage header, /*tar upp 100% växer inte mer och blir inte mindre*/
-.startpage footer{
-	flex: 0 0 100%;
+.startpage footer{      /*basen blir 100% av header och footer vilket gör att det ser bra ut*/
+	flex: 0 0 100%;    /*flex-grow, flex-shrink och flex-basis*/
 }
 
 .startpage section { /*sectioner tar 22%*/
-	flex: 0 0 22%;
+	flex: 0 0 25%;   /*flex-grow, flex-shrink och flex-basis*/
 }
 
 .logoo   /* bildens storlek i mitten "warzone"*/
@@ -70,7 +67,7 @@ Regler för undersidor
 	color:#00af0f;
  }
 
-  .flex{
+  .flexmeny{
 	display: flex;    /* för subpage*/
 }
 
@@ -82,18 +79,16 @@ Regler för meny
 
 .menu  h2 {
 font-family: 'Merienda One', cursive; /*typsnitt hämtat från google*/
-margin: 0 0 1em;
-padding: 2em 0;
+padding: 2em 0;  /* mellanrummet i cirkeln*/
 background-color: #c2dbc4;  /* mycket ljusgrå */
 text-align: center;
 box-shadow: inset 0 0 20px #08f027; /*Rundningen, effekten med en inre box-shadow*/
-border-radius:100%;             
+border-radius:100%;              
 }
 
 .menu a:link,
 .menu a:visited{
 
-	text-decoration: none; /*tar bort understrykning*/
 	color:#000;            
 }
 .menu a:focus,
@@ -101,10 +96,6 @@ border-radius:100%;
 
 	text-decoration: underline; /*understräck och rödfärg när musen är över länk*/
 	color: #A62F00;
-}
-.menu a:active {                /*i klickögonblicket blir det klarare röd färg*/
-	text-decoration: underline;
-	color:#FF4900;
 }
 
 /*
@@ -114,7 +105,7 @@ Regler för footer
 */
 
 footer {				/*texten i botten*/
-	margin-top: 3em;
+	margin-top: 4em;
 	text-align:center;  
 	color:#999;
 }
@@ -129,33 +120,18 @@ Subpage
 /*=======================*/
 
 .subpage .logo {
-	width: 250px;  /* logo storlek*/
+	width: 500px;  /* logo storlek*/
 	height:150px;
 }
 .subpage h1{
 	font-size: 2.6rem; /*rubrik storlek*/
 }
-h1 > span{
-	color: #0b7214; /* "om oss" färg*/
-}
-
-.subpage .hwrap {
-	justify-content: space-between; /*puttar logo och rubrik ifrån varandrea*/
-}
 
 
-.subpage .hwrap > a,
-.subpage .hwrap > h1 {
-	flex: 0 1 20%;   
-	min-width: 300px;
-	margin-right: 10px;		
-}
-.subpage .hwrap > h1,
-div[role=main] {
-	flex: 1 1 300px;
-	
-	
-}
+
+
+
+
 .subpage .hwrap > a,
 nav {
 	flex: 0 1 20%;  /*flex-grow,flex-shrink och flex-basis*/
@@ -191,14 +167,13 @@ nav {
 
 
 article{                 
-	padding-bottom:1em;  /* sista p elementet medverkar 1em*/
-	margin-bottom: 2em;
+	padding-bottom:2em;  /* mellanrummet ifrån gröna understräcket till texten*/
 	border-bottom: 3px double #00af64; /*gröna understräcket mellan alla personer*/
 
 }
 
 article p{
-	margin-left:140px; /* hur långt till höger "p" börjar*/
+	margin-left:150px; /* hur långt till höger "p" börjar*/
 	
 
 }
@@ -207,21 +182,29 @@ figure {
 	margin: 0; /*nolställ webbläsarens inbyggda stil*/
 }
 figure img{
-	width:128px;  /*storlek på bilderna*/
-	height:128px;
+	width:130px;  /*storlek på bilderna*/
+	height:130px;
 }
 figcaption {                     /* stil/storlek på namnen under bilderna*/
-	font: italic bolder 110% sans-serif;
 	text-align: center;
-	text-transform: uppercase;
 	color: #666;
 }
 
-/*=======================*/
-/*återanvändbara komponenter*/
-/*=======================*/
 
-.dborder {                  /*storlek på kantlinjer runt namn*/
+
+.dborder {                  /*storlek på kantlinjer runt namn på vapen under*/
 	border: 1px solid #ccc;   
 	padding: 5px;            
 }
+
+caption{
+ font-size: 150%;
+}
+table{
+	width: 100%;
+	margin-top: 100px;
+}
+table, th, td {
+	border: 0.5px solid black;
+}
+
