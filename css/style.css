@@ -1,6 +1,3 @@
-@charset "UTF-8";
-
-
 body {
 	margin: auto;		/*Centrera sidan till mitten*/
 	max-width: 1000px;     /*max bredd på body,ser bättre ut */
@@ -16,23 +13,19 @@ form {
 	}
 
 
-/*
-====================================================
-Regler startsida
-====================================================
-*/
+
 .startpage{         /*startsidan flex layout*/
 	display: flex;	/* gör hela body till flexbox*/
 	flex-wrap: wrap;
 	justify-content: space-between;
 
 }
-.startpage header, /*tar upp 100% växer inte mer och blir inte mindre*/
-.startpage footer{      /*basen blir 100% av header och footer vilket gör att det ser bra ut*/
+header, /*tar upp 100% växer inte mer och blir inte mindre*/
+footer{      /*basen blir 100% av header och footer vilket gör att det ser bra ut*/
 	flex: 0 0 100%;    /*flex-grow, flex-shrink och flex-basis*/
 }
 
-.startpage section { /*sectioner tar 22%*/
+section { /*sectioner tar 25%*/
 	flex: 0 0 25%;   /*flex-grow, flex-shrink och flex-basis*/
 }
 
@@ -52,15 +45,11 @@ Regler startsida
     border-bottom: 3px double #00AF64; 
    }
 
-/*
-====================================================
-Regler för undersidor
-====================================================
-*/
+
  
- h1 {
+ h1 {        /*stora rubriken på toppen Meta chaser*/
 	font-family: 'Merienda One', cursive; /*typsnitt hämtat från google*/
-    font-size: 500%;           /* Massiv rubrik */
+    font-size: 500%;           
    }
 
  h1::first-letter {    /*byter färg på första bokstaven i rubrik*/
@@ -68,14 +57,12 @@ Regler för undersidor
  }
 
   .flexmeny{
-	display: flex;    /* för subpage*/
+	display: flex;  
+
+	
 }
 
-/*
-====================================================
-Regler för meny
-====================================================
-*/
+
 
 .menu  h2 {
 font-family: 'Merienda One', cursive; /*typsnitt hämtat från google*/
@@ -86,84 +73,34 @@ box-shadow: inset 0 0 20px #08f027; /*Rundningen, effekten med en inre box-shado
 border-radius:100%;              
 }
 
-.menu a:link,
-.menu a:visited{
+
+.menu a{    /*texten i cirkeln till svart*/
 
 	color:#000;            
 }
-.menu a:focus,
+
 .menu a:hover{
 
-	text-decoration: underline; /*understräck och rödfärg när musen är över länk*/
 	color: #A62F00;
 }
 
-/*
-====================================================
-Regler för footer
-====================================================
-*/
+
 
 footer {				/*texten i botten*/
-	margin-top: 4em;
+	
 	text-align:center;  
-	color:#999;
-}
-
-/*
-====================================================
-Subpage
-====================================================
-*/
-/*=======================*/
-/*layout sektioner*/ 
-/*=======================*/
-
-.subpage .logo {
-	width: 500px;  /* logo storlek*/
-	height:150px;
-}
-.subpage h1{
-	font-size: 2.6rem; /*rubrik storlek*/
+	
 }
 
 
-
-
-
-
-.subpage .hwrap > a,
 nav {
-	flex: 0 1 20%;  /*flex-grow,flex-shrink och flex-basis*/
-	min-width: 146px; /* hur mycket dessa flex items får krympa*/
+	flex: 0 0 20%;  /*flex-grow,flex-shrink och flex-basis*/
 	margin-right: 10px;	/*flex items  till höger inte ska komma ända inpå*/
 	}
 
-/*=======================*/
-/*Meny*/
-/*=======================*/
-
-.menu{   
-	margin: 1em 0;
-	padding: 0;
-	display:flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
-	list-style:none;
-}
-.menu > h2 {
-	margin: 0 0 1rem;
-	width:100%;
-
-}
 
 
 
-
-/*=======================================================*/
-/*regler för subpage main div*/ /*återanvändbara konponenter*/   
-/*========================================================*/
 
 
 article{                 
@@ -179,11 +116,11 @@ article p{
 }
 figure {
 	float: left; /*bilden till vänster om texten*/
-	margin: 0; /*nolställ webbläsarens inbyggda stil*/
+	margin: 0; /*nolställ webbläsarens inbyggda stil ser bättre ut  med allt längst kanten*/
 }
 figure img{
-	width:130px;  /*storlek på bilderna*/
-	height:130px;
+	width:140px;  /*storlek på bilderna*/
+	height:140px;
 }
 figcaption {                     /* stil/storlek på namnen under bilderna*/
 	text-align: center;
@@ -192,9 +129,10 @@ figcaption {                     /* stil/storlek på namnen under bilderna*/
 
 
 
-.dborder {                  /*storlek på kantlinjer runt namn på vapen under*/
+
+.texten {                  /*storlek på kantlinjer runt namn på vapen under*/
 	border: 1px solid #ccc;   
-	padding: 5px;            
+	padding: 1px;            
 }
 
 caption{
