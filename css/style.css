@@ -8,6 +8,10 @@ header {
 	text-align: center; /*Centrera texten i mitten */ 
 
 }
+
+#id {
+	color:red;
+}
 form { 
 	margin:auto;   /*centrerar form till mitten av hemsidan*/
 	}
